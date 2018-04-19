@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.sf.amap3d.MainActivity"
+    android:id="@+id/drawer"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.sf.amap3d.MainActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/actionBarOverlayLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorAccent"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/menubutton"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+        <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.amap.api.maps.MapView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/port_timer_shaft"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="诗人时间轴"/>
+        <Button
+            android:id="@+id/port_timer_compared_shaft"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="TEST"/>
+
+        <Button
+            android:id="@+id/TEST"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="诗人时间对比轴"/>
+
+        <Button
+            android:id="@+id/voice_page"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="测试"/>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.NavigationView
+        android:background="@drawable/menu"
+        android:id="@+id/nav"
+        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/slidingmenu">
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </RelativeLayout>-->

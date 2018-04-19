@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chart2"
+    tools:context="com.example.LJJ.Login.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/inputframe"
+        android:layout_height="wrap_content"
+        android:layout_width="368dp"
+        android:orientation="vertical"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="-13dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent">
+            <EditText
+                android:id="@+id/account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入账号"
+                android:maxLines="1"
+
+                android:allowUndo="true"
+                />
+            <ImageButton
+                android:id="@+id/cancela"
+                android:background="@drawable/clear"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent">
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入密码"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:allowUndo="true"
+                />
+            <ImageButton
+                android:id="@+id/cancelp"
+                android:background="@drawable/clear"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/userlogin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#08a"
+            android:text="用户登录"/>
+
+        <Button
+            android:id="@+id/passengerlogin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:background="@color/mediumspringgreen"
+            android:text="游客登录"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textSize="14dp"
+            android:textColor="@color/brown"
+            android:text="新用户注册"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

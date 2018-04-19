@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--在时间轴播放界面，点击某一个具体的地点，将会弹出本界面，本界面主要罗列了当前诗人的基本信息，和当前地点诗的列表，点击将会进入百度搜索（暂时）-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/poetry_name"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    </ListView>
+<!--<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Hello"/>-->
+    <ListView android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+</LinearLayout>

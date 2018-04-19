@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/chart2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/backpage"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:background="@drawable/arrow2" />
+
+    <LinearLayout
+        android:id="@+id/mainframe"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="122dp"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/saccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:allowUndo="true"
+                android:hint="请输入账号"
+
+                android:maxLines="1" />
+
+            <ImageButton
+                android:id="@+id/cancelsa"
+                android:layout_width="20dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:layout_height="20dp"
+                android:background="@drawable/clear" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/spassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:allowUndo="true"
+                android:hint="请输入密码"
+
+                android:maxLines="1" />
+
+            <ImageButton
+                android:id="@+id/cancelsp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/clear"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/confirmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:allowUndo="true"
+                android:hint="请确认密码"
+
+                android:maxLines="1" />
+
+            <ImageButton
+                android:id="@+id/cancelcp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/clear" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#08a"
+            android:text="注册" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

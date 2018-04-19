@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sf.amap3d">
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_main"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="com.example.sf.amap3d.MainActivity.ACTION_START" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.sf.TimeShaft.PortTimerShaft" />
+        <activity android:name="com.example.sf.TimeShaft.PoetChoice" />
+        <activity android:name="com.example.sf.TimeShaft.ComparedTimeShaft.PoetChoiceClone" />
+        <activity android:name="com.example.sf.TimeShaft.ComparedTimeShaft.PortComapredTimerShaft" />
+        <activity android:name="com.example.sf.PoetryInfo.PoetryList" />
+        <activity android:name="com.example.LJJ.Login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="16477ab8d29306b849679f692612a334" />
+
+        <activity android:name="com.example.LJJ.Login.SigninActivity">
+        <intent-filter>
+        <action android:name="com.example.LJJ.Login.SigninActivity.ACTION_START"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+        </activity>
+        <activity android:name="com.example.LJJ.MyUser.PersonCenter" />
+        <activity android:name="com.example.LJJ.MyUser.InfoEdit"/>
+        <activity
+            android:name="com.example.sf.TimeShaft.ComparedTimeShaft.PoetChoiceListview.PoetMutipleChoice"
+            android:label="@string/title_activity_poet_mutiple_choice" />
+        <activity
+            android:name="com.example.leesanghyuk.abandon.PoetryBrownser"
+            android:label="@string/title_activity_poet_mutiple_choice" />
+        <activity android:name="com.example.leesanghyuk.LayoutDemo.TtsDemo" />
+        <!-- 移动统计分析 -->
+        <meta-data
+            android:name="IFLYTEK_APPKEY"
+            android:value="&apos;5aa60f6b&apos;" />
+        <meta-data
+            android:name="IFLYTEK_CHANNEL"
+            android:value="Android_Demo" />
+
+        <activity
+            android:name="com.example.leesanghyuk.LayoutDemo.ListViewDemo"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.example.leesanghyuk.LayoutDemo.SwipeFinishDemo"
+            android:theme="@android:style/Theme.Translucent" />
+    </application>
+
+</manifest>

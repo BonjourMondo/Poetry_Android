@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/little2_1" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_2" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_3" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_4" android:duration="150"></item>
+    <item android:drawable="@drawable/little2_5" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_6" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_7" android:duration="150"></item> 
+    <item android:drawable="@drawable/little2_8" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_9" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_10" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_11" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_12" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_13" android:duration="150"></item> 
+    <item android:drawable="@drawable/little2_14" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_15" android:duration="150"></item>  
+    <item android:drawable="@drawable/little2_16" android:duration="150"></item>  
+
+    </animation-list>
