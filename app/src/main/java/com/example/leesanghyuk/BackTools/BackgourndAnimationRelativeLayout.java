@@ -22,6 +22,8 @@ import com.example.leesanghyuk.utils.FastBlurUtil;
 import com.example.sf.amap3d.MainActivity;
 import com.example.sf.amap3d.R;
 
+import java.util.Random;
+
 
 /**
  * Created by AchillesL on 2016/11/18.
@@ -60,7 +62,13 @@ public class BackgourndAnimationRelativeLayout extends RelativeLayout {
         initObjectAnimator();
 
         //读取背景图片（暂定随机）
-        initBackground(R.raw.ic_music2);
+        int number = new Random().nextInt(10) + 1;
+        if (number<=3)
+            initBackground(R.raw.ic_music2);
+        else if (number<=6)
+            initBackground(R.raw.ic_music3);
+        else
+            initBackground(R.raw.ic_music1);
     }
 
     private void initBackground(int pic){

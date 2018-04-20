@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.sf.amap3d.MainActivity"
     android:id="@+id/drawer"
+    android:theme="@style/AppTheme_whiteScreen"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
@@ -46,49 +47,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </com.amap.api.maps.MapView>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/port_timer_shaft"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
 
-            android:gravity="center"
-            android:textSize="12sp"
-            android:text="诗人时间轴"/>
-        <Button
-            android:id="@+id/port_timer_compared_shaft"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
+        <include layout="@layout/content_main" />
 
-            android:gravity="center"
-            android:textSize="12sp"
-            android:text="TEST"/>
 
-        <Button
-            android:id="@+id/TEST"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-
-            android:gravity="center"
-            android:textSize="12sp"
-            android:text="诗人时间对比轴"/>
-
-        <Button
-            android:id="@+id/voice_page"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-
-            android:gravity="center"
-            android:textSize="12sp"
-            android:text="测试"/>
-
-    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
     <android.support.design.widget.NavigationView
         android:background="@drawable/menu"

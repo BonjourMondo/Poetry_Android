@@ -39,7 +39,8 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="com.example.sf.amap3d.MainActivity.ACTION_START" />
-                <category android:name="android.intent.category.DEFAULT"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name="com.example.sf.TimeShaft.PortTimerShaft" />
@@ -50,21 +51,24 @@
         <activity android:name="com.example.LJJ.Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="16477ab8d29306b849679f692612a334" />
 
         <activity android:name="com.example.LJJ.Login.SigninActivity">
-        <intent-filter>
-        <action android:name="com.example.LJJ.Login.SigninActivity.ACTION_START"/>
-        <category android:name="android.intent.category.DEFAULT"/>
-        </intent-filter>
+            <intent-filter>
+                <action android:name="com.example.LJJ.Login.SigninActivity.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity android:name="com.example.LJJ.MyUser.PersonCenter" />
-        <activity android:name="com.example.LJJ.MyUser.InfoEdit"/>
+        <activity android:name="com.example.LJJ.MyUser.InfoEdit" />
         <activity
             android:name="com.example.sf.TimeShaft.ComparedTimeShaft.PoetChoiceListview.PoetMutipleChoice"
             android:label="@string/title_activity_poet_mutiple_choice" />
@@ -86,6 +90,7 @@
         <activity
             android:name="com.example.leesanghyuk.LayoutDemo.SwipeFinishDemo"
             android:theme="@android:style/Theme.Translucent" />
+        <activity android:name="com.example.leesanghyuk.LayoutDemo.PushStoryDemo"></activity>
     </application>
 
 </manifest>

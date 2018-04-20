@@ -45,7 +45,7 @@ public class TtsDemo extends AppCompatActivity implements View.OnClickListener{
     // 语音合成对象
     private SpeechSynthesizer mTts;
     // 默认发音人
-    private String voicer = "xiaorong";
+    private String voicer = "xiaoyan";
     // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
     private SharedPreferences mSharedPreferences;
@@ -67,6 +67,8 @@ public class TtsDemo extends AppCompatActivity implements View.OnClickListener{
     private Button mSend_comment;
     private TextView mTts_text;
     private TextView mTts_name;
+    private ImageView back;
+    private ImageView mPlaying_fav;
 
     @SuppressLint("ShowToast")
     public void onCreate(Bundle savedInstanceState) {
@@ -94,10 +96,15 @@ public class TtsDemo extends AppCompatActivity implements View.OnClickListener{
         mSend_comment=(Button)findViewById(R.id.send_comment);
         mTts_text= (TextView) findViewById(R.id.tts_text);
         mTts_name= (TextView) findViewById(R.id.tts_name);
+        back=(ImageView)findViewById(R.id.play_back);
+        mPlaying_fav=(ImageView)findViewById(R.id.playing_fav);
+
         mSend_comment.setOnClickListener(this);
         mIvPlayOrPause.setOnClickListener(this);
         mComment_list.setOnClickListener(this);
         mPlaying_cmt.setOnClickListener(this);
+        back.setOnClickListener(this);
+        mPlaying_fav.setOnClickListener(this);
     }
 
     public void setContent(){
@@ -167,6 +174,11 @@ public class TtsDemo extends AppCompatActivity implements View.OnClickListener{
                     comment_flag=true;
                 }
                 break;
+            case R.id.play_back:
+                this.finish();
+                break;
+            case R.id.playing_fav:
+                mPlaying_fav.setImageResource(R.drawable.play_icn_loved_prs);
         }
     }
 

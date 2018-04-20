@@ -1,7 +1,6 @@
 package com.example.sf.amap3d;
 
 import android.Manifest;
-import android.app.Activity;
 //import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -34,6 +33,10 @@ import com.amap.api.maps.model.TileOverlayOptions;
 import com.example.LJJ.Login.LoginActivity;
 import com.example.LJJ.MyUser.PersonCenter;
 import com.example.LJJ.MyUser.User;
+import com.example.leesanghyuk.BackTools.PopMenu;
+import com.example.leesanghyuk.BackTools.PopMenuItem;
+import com.example.leesanghyuk.BackTools.PopMenuItemListener;
+import com.example.leesanghyuk.LayoutDemo.PushStoryDemo;
 import com.example.leesanghyuk.LayoutDemo.TtsDemo;
 import com.example.sf.CONSTANTS_SF;
 import com.example.sf.DataBase.Poetry;
@@ -72,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
     private User user;
     private String[] title={"我的好友","我的收藏","敬请期待"};
 
+    //发布文字
+    private PopMenu mPopMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,60 +93,18 @@ public class MainActivity extends AppCompatActivity {
         aMap.setMapCustomEnable(true);
 //        aMap.setPointToCenter(40,20);
 
-        Button poer_t_s=(Button)findViewById(R.id.port_timer_shaft);
-        poer_t_s.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this, PoetChoice.class);
-                startActivity(intent);
-            }
-        });
+
         registerListeners();
-
-        Button poer_t_p_s=(Button) findViewById(R.id.port_timer_compared_shaft);
-        poer_t_p_s.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this, PoetChoiceClone.class);
-                startActivity(intent);
-            }
-        });
-        Button test=(Button)findViewById(R.id.TEST);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Handler handler=new Handler(){
-                    @Override
-                    public void handleMessage(Message msg){
-                        String result=msg.obj.toString();
-                        Intent intent=new Intent(MainActivity.this, PoetMutipleChoice.class);
-                        intent.putExtra("result",result);
-                        startActivity(intent);
-                    }
-                };
-
-//                Server server=new Server(handler, CONSTANTS_SF.URL_ROOT+"poetList");
-                Server server=new Server(handler, CONSTANTS_SF.URL_ROOT+"poetList");
-                String sql="select name,id from poet_l";
-                server.post(sql);
-
-            }
-        });
 
         SpeechUtility.createUtility(com.example.sf.amap3d.MainActivity.this, SpeechConstant.APPID +"=5aa60f6b");
         requestPermissions();
-        Button test2= (Button) findViewById(R.id.voice_page);
-        test2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(com.example.sf.amap3d.MainActivity.this, TtsDemo.class);
-                startActivity(intent);
-            }
-        });
 
         //initDatabase();
 //drawAllPoints();
         drawHeatMap();
+
+        initPopMenu();
+
     }
 
     protected void initcomponent(){
@@ -235,6 +199,43 @@ public class MainActivity extends AppCompatActivity {
         List<Poetry> poetries= DataSupport.select("latitude","longtitude").find(Poetry.class);
         DrawMarksWithMultiThread drawMarksWithMultiThread=new DrawMarksWithMultiThread(aMap,Poetry.getLatLngs(poetries));
         drawMarksWithMultiThread.createThread();
+    }
+
+    void initPopMenu(){
+        mPopMenu = new PopMenu.Builder().attachToActivity(MainActivity.this)
+                .addMenuItem(new PopMenuItem("文字", getResources().getDrawable(R.drawable.tabbar_compose_idea)))
+                .addMenuItem(new PopMenuItem("时间轴", getResources().getDrawable(R.drawable.tabbar_compose_photo)))
+                .addMenuItem(new PopMenuItem("对比轴", getResources().getDrawable(R.drawable.tabbar_compose_headlines)))
+                .addMenuItem(new PopMenuItem("签到", getResources().getDrawable(R.drawable.tabbar_compose_lbs)))
+                .addMenuItem(new PopMenuItem("点评", getResources().getDrawable(R.drawable.tabbar_compose_review)))
+                .addMenuItem(new PopMenuItem("更多", getResources().getDrawable(R.drawable.tabbar_compose_more)))
+                .setOnItemClickListener(new PopMenuItemListener() {
+                    @Override
+                    public void onItemClick(PopMenu popMenu, int position) {
+                        if(position==0) {
+                            Intent intent =new Intent(MainActivity.this, PushStoryDemo.class);
+                            startActivity(intent);
+                        }
+                        if(position==1){
+                            Intent intent=new Intent(MainActivity.this, PoetChoice.class);
+                            startActivity(intent);
+                        }
+                        if(position==2){
+                            Intent intent=new Intent(MainActivity.this, PoetChoiceClone.class);
+                            startActivity(intent);
+                        }
+
+                    }
+                })
+                .build();
+        findViewById(R.id.rl_bottom_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!mPopMenu.isShowing()) {
+                    mPopMenu.show();
+                }
+            }
+        });
     }
     /**
      * 方法必须重写

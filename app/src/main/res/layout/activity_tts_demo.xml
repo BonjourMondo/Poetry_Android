@@ -38,15 +38,18 @@
     </LinearLayout>
 
 
-    <android.support.v7.widget.Toolbar android:id="@+id/toolBar"
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
         android:background="@android:color/transparent"
         app:subtitleTextAppearance="@style/netease_toolbar_subtitle"
-        app:titleTextAppearance="@style/netease_toolbar_title"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" >
+        app:titleTextAppearance="@style/netease_toolbar_title">
+
         <TextView
             android:id="@+id/toorbar_title"
             android:layout_width="wrap_content"
@@ -56,8 +59,7 @@
             android:maxLength="15"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
     </android.support.v7.widget.Toolbar>
 
 
@@ -152,6 +154,33 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/shadow" />
+
+    <ImageView
+        android:id="@+id/play_back"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView2"
+        app:srcCompat="@drawable/actionbar_back" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:text="轶事趣闻"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
 
 
 </com.example.leesanghyuk.BackTools.BackgourndAnimationRelativeLayout>

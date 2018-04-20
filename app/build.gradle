@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.example.sf.amap3d"
         minSdkVersion 23
@@ -37,6 +37,6 @@ dependencies {
     implementation files('libs/Msc.jar')
     implementation files('libs/Sunflower.jar')
     implementation files('libs/mysql-connector-java-5.1.30-bin.jar')
+    compile 'com.facebook.rebound:rebound:0.3.8'
+
 }
-
-
